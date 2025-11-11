@@ -1,0 +1,10 @@
+SELECT 
+provider_name
+,drg_definition
+,sum(total_discharges) as discharges
+,sum(average_covered_charges) avg_covered
+,sum(average_medicare_payments) avg_medicare
+,sum(average_total_payments) as total
+
+ FROM `bigquery-public-data.cms_medicare.inpatient_charges_2015` 
+ group by 1,2
